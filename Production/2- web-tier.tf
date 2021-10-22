@@ -34,7 +34,6 @@ resource "azurerm_linux_virtual_machine" "web_linuxvm" {
     sku = "18.04-LTS"
     version = "latest"
   }
-  #custom_data = filebase64("${path.module}/app-scripts/redhat-webvm-script.sh")    
   custom_data = base64encode(local.webvm_custom_data)  
 
 }
