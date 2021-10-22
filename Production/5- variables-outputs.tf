@@ -97,7 +97,8 @@ variable "web_linuxvm_instance_count" {
   default = {
     "vm1" = "1022",
     "vm2" = "2022",
-    "vm3" = "3022"
+    "vm3" = "3022",
+    "ansiblevm" = "4022"
   }
 }
 
