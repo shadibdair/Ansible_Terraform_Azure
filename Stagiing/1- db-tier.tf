@@ -72,10 +72,10 @@ resource "azurerm_network_security_rule" "db_nsg_rule_inbound" {
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
-  source_port_range           = "*"
+  source_port_range           = var.vnet_address_space
   destination_port_range      = each.value 
   source_address_prefix       = "*"
-  destination_address_prefix  = "*"
+  destination_address_prefix  = "VirtualNetwork"
   resource_group_name         = azurerm_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.db_subnet_nsg.name
 }
