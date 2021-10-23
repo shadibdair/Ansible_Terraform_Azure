@@ -2,8 +2,6 @@ Added the two environmets : Staging, Production
 
 # Node.js Weight Tracker
 
-![Demo](docs/build-weight-tracker-app-demo.gif)
-
 This sample application demonstrates the following technologies.
 
 * [hapi](https://hapi.dev) - a wonderful Node.js application framework
@@ -30,3 +28,20 @@ This sample application demonstrates the following technologies.
 1. Run `npm run dev` to start Node.js
 
 The associated blog post goes into more detail on how to set up PostgreSQL with Docker and how to configure your Okta account.
+
+---
+---
+
+# Ansible 
+## instalation ansible inside the conroler-ansible
+
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+$ sudo nano /etc/ansible/hosts
+  - add the webservers with their ip privates 
+$ ansible-inventory --list -y
+$ ssh-keygen
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub user@privateip
+$ ansible all -m ping -u  username
