@@ -60,8 +60,7 @@ resource "azurerm_subnet_network_security_group_association" "db_subnet_nsg_asso
 locals {
   db_inbound_ports_map = {
     # If the key starts with a number, you must use the colon syntax ":" instead of "="
-    "3000" : "5432",
-    "3010" : "22"
+    "3000" : "5432"
   } 
 }
 
