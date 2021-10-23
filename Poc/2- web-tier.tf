@@ -1,24 +1,13 @@
 # Author Shadi Badir
 
 
-# Locals Block for custom data
-locals {
-webvm_custom_data = <<CUSTOM_DATA
-#!/bin/sh
-sudo apt update && sudo apt full-upgrade -y
-sudo apt install docker.io -y
-sudo apt install npm -y
-CUSTOM_DATA  
-}
-
-# Resource: Azure Linux Virtual Machine
+# Resource: Azure Windows Virtual Machine
 resource "azurerm_windows_virtual_machine" "web_linuxvm" {
   for_each = var.web_linuxvm_instance_count
   name = "${local.resource_name_prefix}-web-${each.key}"
   resource_group_name = azurerm_resource_group.rg.name
   location = azurerm_resource_group.rg.location
   size = "Standard_B2s"
-  disable_password_authentication = "false"
   admin_username = "web-server-${each.key}"
   admin_password = var.web_password
   network_interface_ids = [ azurerm_network_interface.web_linuxvm_nic[each.key].id ]
@@ -29,13 +18,11 @@ resource "azurerm_windows_virtual_machine" "web_linuxvm" {
     storage_account_type = "Standard_LRS"
   }
   source_image_reference {
-    publisher = "Canonical"
-    offer = "UbuntuServer"
-    sku = "18.04-LTS"
+    publisher = "MicrosoftWindowsServer"
+    offer = "WindowsServer"
+    sku = "2016-Datacenter"
     version = "latest"
   }
-  custom_data = base64encode(local.webvm_custom_data)  
-
 }
 
 # -------------------------------------------------------
