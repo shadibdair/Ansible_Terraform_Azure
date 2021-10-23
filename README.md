@@ -35,13 +35,13 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 # Ansible 
 ## instalation ansible inside the conroler-ansible
 
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
-$ sudo nano /etc/ansible/hosts
-  - add the webservers with their ip privates 
-$ ansible-inventory --list -y
-$ ssh-keygen
-$ ssh-copy-id -i ~/.ssh/id_rsa.pub user@privateip
-$ ansible all -m ping -u  username
+- $ sudo apt update
+- $ sudo apt install software-properties-common
+- $ sudo add-apt-repository --yes --update ppa:ansible/ansible
+- $ sudo apt install ansible
+- $ sudo nano /etc/ansible/hosts
+    - add the webservers with their ip privates 
+- $ ansible-inventory --list -y
+- $ ssh-keygen
+- $ ssh-copy-id -i ~/.ssh/id_rsa.pub user@privateip
+- $ ansible all -m ping -u  username
