@@ -1,0 +1,105 @@
+---
+
+- hosts: webservers
+  become: yes
+  vars_files:
+  - vars.yml
+
+  tasks:
+    - name: Update apt-get repo and cache
+      become: yes
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Upgrade all apt packages
+      become: yes
+      apt: upgrade=dist force_apt_get=yes
+
+    - name: update nodejs package
+      ansible.builtin.shell: curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
+    - name: install nodejs
+      apt:
+        name: nodejs
+        state: present
+
+
+    - name: git clone repo
+      shell: git clone https://github.com/shadibdair/bootcamp-app.git
+      args:
+        chdir: /home/
+
+    - name: create .env file
+      copy:
+        dest: "../bootcamp-app/.env"
+        content: |
+          # Node Weight Tracker
+          HOST_URL={{ HOST_URLL }}
+          COOKIE_ENCRYPT_PWD=superAwesomePasswordStringThatIsAtLeast32CharactersLong!
+          NODE_ENV=development
+
+          # Okta configuration
+          OKTA_ORG_URL=https:{{ OKTAURL}}
+          OKTA_CLIENT_ID={{ OKTAID }}
+          OKTA_CLIENT_SECRET={{ OKTASECRET  }}
+          
+          # Host configuration
+          PGHOST={{ PGHOSTNAME }}
+          PGUSERNAME={{ PGUSERNAMEE }}
+          PGDATABASE={{ PGDBNAME }}
+          PGPASSWORD={{ PGPASS }}
+          PGPORT={{ PGPORTT }}
+
+    - name: install dependencies
+      become: yes
+      command: "npm install {{ item }}"
+      args:
+        chdir: /home/bootcamp-app
+      with_items:
+        - '@hapi/hapi@19'
+        - '@hapi/bell@12' 
+        - '@hapi/boom@9'
+        - '@hapi/cookie@11' 
+        - '@hapi/inert@6'
+        - '@hapi/joi@17' 
+        - '@hapi/vision@6' 
+        - 'dotenv@8'
+        - 'ejs@3' 
+        - 'postgres@1'
+
+
+    - name: install nodemon
+      become: yes
+      command: "npm install --save-dev nodemon@2"
+      args:
+        chdir: /home/bootcamp-app
+
+
+
+    - name: init the database
+      command: 'npm run initdb'
+      run_once: true
+      args:
+        chdir: '/home/bootcamp-app/'
+
+    - name: PM2 npm
+      become: yes
+      command: "npm install pm2 -g"
+      args:
+        chdir: '/home/bootcamp-app/'
+
+    - name: run web app
+      command: 'pm2 start "npm run dev" --name weight_tracker'
+      args:
+        chdir: '/home/bootcamp-app/'
+
+
+
+    - name: run pm2 startup
+      become: true
+      command: 'pm2 startup systemd -u home --hp /home/bootcamp-app'
+      environment:
+        PATH: "home/bootcamp-app/.env"
+      ignore_errors: True
+
+    - name: Save PM2 configuration
+      command: pm2 save
