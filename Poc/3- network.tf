@@ -74,7 +74,7 @@ resource "azurerm_network_interface_backend_address_pool_association" "web_nic_l
 # Azure LB Inbound NAT Rule
 resource "azurerm_lb_nat_rule" "web_lb_inbound_nat_rule_22" {
   # To effectively handle azurerm provider related dependency bugs during the destroy resources time
-  depends_on = [azurerm_linux_virtual_machine.web_linuxvm  ]
+  depends_on = [azurerm_windows_virtual_machine.web_linuxvm  ]
   for_each = var.web_linuxvm_instance_count
   name = "${each.key}-ssh-${each.value}-vm-22"
   protocol = "Tcp"
