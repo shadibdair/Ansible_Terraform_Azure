@@ -30,7 +30,6 @@ This sample application demonstrates the following technologies.
 The associated blog post goes into more detail on how to set up PostgreSQL with Docker and how to configure your Okta account.
 
 ---
----
 
 # Ansible 
 ## instalation ansible inside the conroler-ansible
@@ -45,3 +44,17 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 - $ ssh-keygen
 - $ ssh-copy-id -i ~/.ssh/id_rsa.pub user@privateip
 - $ ansible all -m ping -u  username
+
+---
+
+# The results:
+## Using terraform to build the infrastructure 
+## USing asible to the run the configuration 
+
+<img width="1440" alt="Screen Shot 2021-10-23 at 16 45 22" src="https://user-images.githubusercontent.com/43513994/138560209-a1a8f83c-4111-4de0-b404-4e8cabad0cf2.png">
+<img width="1440" alt="Screen Shot 2021-10-23 at 16 46 49" src="https://user-images.githubusercontent.com/43513994/138560210-cb5f5060-7a9b-44e1-94aa-25509d50b07f.png">
+<img width="1440" alt="Screen Shot 2021-10-23 at 16 47 55" src="https://user-images.githubusercontent.com/43513994/138560211-f667a6de-eb61-4098-9069-728512efd67e.png">
+<img width="1440" alt="Screen Shot 2021-10-23 at 16 55 05" src="https://user-images.githubusercontent.com/43513994/138560212-5ae71877-ff18-4085-8211-ec2803ffe8d6.png">
+<img width="1440" alt="Screen Shot 2021-10-23 at 16 57 25" src="https://user-images.githubusercontent.com/43513994/138560216-42a05368-6e3d-4a13-8a9a-b9647d830781.png">
+<img width="1440" alt="Screen Shot 2021-10-23 at 16 56 20" src="https://user-images.githubusercontent.com/43513994/138560219-717f0f28-dbdf-4507-8e81-719710362acb.png">
+
