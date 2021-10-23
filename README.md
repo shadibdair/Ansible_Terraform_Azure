@@ -53,6 +53,7 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 ### Using asible to the run the configuration 
 
 <img width="577" alt="Screen Shot 2021-10-23 at 17 23 06" src="https://user-images.githubusercontent.com/43513994/138560446-4223fc75-45c2-4cb7-bff8-ee2e18483682.png">
+<img width="1416" alt="Screen Shot 2021-10-23 at 17 23 51" src="https://user-images.githubusercontent.com/43513994/138560470-64bd04bd-2448-4858-b585-7766acb3765f.png">
 
 
 ## Production
