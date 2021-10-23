@@ -48,7 +48,7 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 ---
 
 # My code that build the infrastructure in azure using terraform 
-### The Topology if the two environments:
+### The Topology regarding the two environments:
 
 #### Staging
 <img width="840" alt="Screen Shot 2021-10-24 at 0 45 41" src="https://user-images.githubusercontent.com/43513994/138572712-f82060b5-701b-45a7-80fc-d8a10cc023d0.png">
