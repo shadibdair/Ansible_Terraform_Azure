@@ -52,6 +52,9 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 ### Using terraform to build the infrastructure 
 ### Using asible to the run the configuration 
 
+<img width="577" alt="Screen Shot 2021-10-23 at 17 23 06" src="https://user-images.githubusercontent.com/43513994/138560446-4223fc75-45c2-4cb7-bff8-ee2e18483682.png">
+
+
 ## Production
 <img width="1440" alt="Screen Shot 2021-10-23 at 16 45 22" src="https://user-images.githubusercontent.com/43513994/138560209-a1a8f83c-4111-4de0-b404-4e8cabad0cf2.png">
 <img width="1440" alt="Screen Shot 2021-10-23 at 16 46 49" src="https://user-images.githubusercontent.com/43513994/138560210-cb5f5060-7a9b-44e1-94aa-25509d50b07f.png">
