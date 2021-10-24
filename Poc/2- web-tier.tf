@@ -4,7 +4,7 @@
 # Resource: Azure Windows Virtual Machine
 resource "azurerm_windows_virtual_machine" "web_linuxvm" {
   for_each = var.web_linuxvm_instance_count
-  name = "${local.resource_name_prefix}-web-${each.key}"
+  name = "${local.resource_name_prefix}i${each.key}"
   resource_group_name = azurerm_resource_group.rg.name
   location = azurerm_resource_group.rg.location
   size = "Standard_B2s"

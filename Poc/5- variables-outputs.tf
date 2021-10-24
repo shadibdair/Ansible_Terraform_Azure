@@ -95,7 +95,7 @@ variable "web_linuxvm_instance_count" {
   description = "Web Linux VM Instance Count"
   type = map(string)
   default = {
-    "windows1" = "1022",
+    "win" = "1022",
     "ansiblevm" = "3022"
   }
 }
