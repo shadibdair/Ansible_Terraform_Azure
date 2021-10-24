@@ -1,5 +1,4 @@
 ## Don't forget to smile - 😀 😃 😄 😁 😆 😊 😇 😌 😍 😎 🤩  
-- Added the two environmets : Staging, Production
 
 # Node.js Weight Tracker🥳
 
@@ -60,8 +59,11 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 * The deferent between the staging and the production ... I've resize the VM (bigger).
 <img width="805" alt="Screen Shot 2021-10-24 at 0 48 46" src="https://user-images.githubusercontent.com/43513994/138572733-6e2cf57b-0a51-4f4d-a13d-26834c4b18d1.png">
 
+### Poc 🍃
+<img width="761" alt="Screen Shot 2021-10-24 at 3 47 02" src="https://user-images.githubusercontent.com/43513994/138575834-120a4d53-9778-43fc-af87-d9c33cabbb74.png">
+
 ### Postgres 🌹
-<img width="1053" alt="Screen Shot 2021-10-24 at 0 50 57" src="https://user-images.githubusercontent.com/43513994/138572738-25041244-65e0-4091-adaa-d3e3471e7783.png">
+<img width="1072" alt="Screen Shot 2021-10-24 at 3 50 37" src="https://user-images.githubusercontent.com/43513994/138575843-c0c66be0-289b-49fe-96e8-8cc03799c8cc.png">
 
      
 # The results:🌷
