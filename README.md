@@ -45,6 +45,22 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 - $ ssh-copy-id -i ~/.ssh/id_rsa.pub user@privateip
 - $ ansible all -m ping -u  username
 
+# Ansible 🎍 🪴
+## instalation ansible inside the conroler-ansible inside [windows] 🌻 🍀
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$url = "https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"
+$file = "$env:temp\ConfigureRemotingForAnsible.ps1"
+
+(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+
+powershell.exe -ExecutionPolicy ByPass -File $file
+##-------------------
+winrm enumerate winrm/config/Listener
+
+##-------------------
+pip install "pywinrm>=0.3.0"
+
 ---
 
 
@@ -84,6 +100,10 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 <img width="1440" alt="Screen Shot 2021-10-23 at 16 56 20" src="https://user-images.githubusercontent.com/43513994/138560219-717f0f28-dbdf-4507-8e81-719710362acb.png">
 <img width="1440" alt="Screen Shot 2021-10-23 at 16 57 25" src="https://user-images.githubusercontent.com/43513994/138560216-42a05368-6e3d-4a13-8a9a-b9647d830781.png">
 <img width="1440" alt="Screen Shot 2021-10-23 at 16 55 05" src="https://user-images.githubusercontent.com/43513994/138560212-5ae71877-ff18-4085-8211-ec2803ffe8d6.png">
+
+## Poc 🪴
+<img width="855" alt="Screen Shot 2021-10-24 at 6 10 35" src="https://user-images.githubusercontent.com/43513994/138580174-c09ecc75-c527-439d-b38e-db3b42cc6c6c.png">
+
 
 # Thank you for your time 💚 !
 
