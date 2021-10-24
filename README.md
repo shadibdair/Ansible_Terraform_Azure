@@ -45,7 +45,7 @@ The associated blog post goes into more detail on how to set up PostgreSQL with 
 - $ ssh-copy-id -i ~/.ssh/id_rsa.pub user@privateip
 - $ ansible all -m ping -u  username
 
-# Ansible 🎍 🪴
+
 ## instalation ansible inside the conroler-ansible inside [windows] 🌻 🍀
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
