@@ -56,8 +56,9 @@ resource "azurerm_subnet_network_security_group_association" "web_subnet_nsg_ass
 locals {
   web_inbound_ports_map = {
     # If the key starts with a number, you must use the colon syntax ":" instead of "="
-    "3000" : "8080",
-    "3010" : "22"
+    "3000" : "3389",
+    "3010" : "8080",
+    "3020" : "22"
   } 
 }
 
